@@ -13,3 +13,10 @@ function f() public pure{
     }
     //bytes are reference types. reference types dont have a .length method
 }
+
+
+// Consider the following variable declarations:
+
+bytes public b1 = 'abc'; //You can add a new element by calling push()
+//You can also call by index b1[0]
+string public s1 = 'abc'; //you can't do neither both
