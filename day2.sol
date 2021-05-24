@@ -42,3 +42,6 @@ contract Property{
     }
     
 }
+
+
+
