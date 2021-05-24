@@ -28,3 +28,9 @@ contract Property{
         return price;
     }
     
+    // setter function, sets a state variable
+    function setPrice(uint _price) public{
+        int a; // local variable saved on stack
+        a = 10;
+        price = _price;
+    }
