@@ -34,3 +34,11 @@ contract Property{
         a = 10;
         price = _price;
     }
+
+
+    
+    function setLocation(string memory _location) public{ //string types must be declared memory or storage
+        location = _location;
+    }
+    
+}
