@@ -41,3 +41,10 @@ function getBalance() public view returns(uint){
 return address(this).balance;
 }
 }
+
+
+
+//msg.sender is a global variables ALWAYS AVAILABLE FOR EVERY INTERACTION
+//transactions, calls, everything
+//gasLeft() built-in function returns the gas that still can be used by the transaction. you can get how much it's been used saving how much gasLeft() transaction had at the start and at the end
+
