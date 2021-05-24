@@ -20,3 +20,23 @@ function f() public pure{
 bytes public b1 = 'abc'; //You can add a new element by calling push()
 //You can also call by index b1[0]
 string public s1 = 'abc'; //you can't do neither both
+
+//SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.5.0 <0.9.0;
+
+
+contract A{
+    string[] public cities = ['Prague', 'Budapest'];
+    
+    function memA() view public { //this does not modify cities
+        string[] memory s1 = cities;
+        s1[0] = "Berlin";   
+    }
+
+    
+    function storA() public {
+        string[] storage s1= cities; //but this does, as an array is a reference type, the equality means: access to the same data, not copy the same data
+        s1[0] = "Berlin";   //is a location, not a value
+    }
+}
