@@ -15,3 +15,23 @@ contract FixedSizeArrays{
   }
   
 }
+
+contract DynamicArrays{ //cost more gas than fixedarrays
+    
+    uint[] public numbers;
+    
+    function setNextItem(uint item) public {
+        numbers.push(item);
+    }
+
+    function getItem(uint i) public view returns(uint) {
+        if(i < numbers.length) {//getItem is NEEDLESS bc uint[] public numbers already has the function public which calls it. however:
+        return numbers[i];
+    } else {
+        return 0;
+    }
+    }
+    
+    function getNumbersLength() public view returns(uint) {
+        return numbers.length;
+    }
