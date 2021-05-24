@@ -21,3 +21,10 @@ contract Property{
         owner = msg.sender;  // initializing owner to the account's address that deploys the contract
     }
     
+    
+    // getter function, returns a state variable
+    // a function declared `view` does not alter the blockchain 
+    function getPrice() public view returns(uint){
+        return price;
+    }
+    
