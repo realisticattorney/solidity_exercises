@@ -7,7 +7,7 @@ contract CryptosToken {
     uint256 supply;
     address public owner;
 
-    constructor(uint _supply){
+    constructor(uint256 _supply) {
         supply = _supply;
         owner = msg.sender;
     }
@@ -21,10 +21,7 @@ contract CryptosToken {
     }
 }
 
-
-
 //challenge 3
-//SPDX-License-Identifier: GPL-3.0
 
 pragma solidity >=0.5.0 <0.9.0;
 
@@ -37,32 +34,25 @@ contract MyTokens {
     }
 }
 
-
 //challenge 5
-//SPDX-License-Identifier: GPL-3.0
 
 pragma solidity >=0.6.0 <0.9.0;
 
-
 contract Deposit {
-    
-    receive() external payable{//introduced in ^0.6.0. No function syntax. It can't have arguments, nor returns anything, and must have external visibility 
+    receive() external payable {
+        //introduced in ^0.6.0. No function syntax. It can't have arguments, nor returns anything, and must have external visibility
     }
-    
-    function getBalance() public view returns(uint) {
+
+    function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
-    
+
     function transferAll(address payable recipient) public {
         recipient.transfer(address(this).balance);
     }
 }
 
-
-
 //challenge 7
-
-//SPDX-License-Identifier: GPL-3.0
 
 pragma solidity >=0.6.0 <0.9.0;
 
@@ -74,10 +64,7 @@ contract Game {
     }
 }
 
-
 //challenge 8
-
-//SPDX-License-Identifier: GPL-3.0
 
 pragma solidity >=0.5.0 <0.9.0;
 
