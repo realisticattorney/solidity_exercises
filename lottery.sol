@@ -26,17 +26,19 @@ contract BabylonLottery {
     
     function timeOut() public {
         require(msg.sender == manager, "You're not allowed to perform this action");
-        require(players.length > 3)
+        require(players.length > 3);
         uint random = r();
         uint winner_index = random % players.length;
         winnerTakeAll(players[winner_index]);
     }
     
     function getBalance() public view returns(uint){
+        require(msg.sender == manager, "Only the manager can know how much is at stake");
         return address(this).balance;
     }
     
     function winnerTakeAll(address payable winner) private {
         winner.transfer(getBalance());
+        players = new address payable[](0);
     }
 }
