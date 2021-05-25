@@ -9,9 +9,11 @@ contract BabylonLottery {
     
     constructor(){
         manager = msg.sender;
+        // players.push(payable(manager));
     }
     
     receive() external payable {
+        require(msg.sender != manager, "Manager can't play!");
         require(msg.value > 0.1 ether, 'Minimum is 0.1 eth');
         uint tickets = msg.value / 100000000000000000;
         for(uint i= 1 ; i <= tickets ; i++) {
