@@ -7,7 +7,7 @@ contract FixedSizeArrays{
   uint[3] public numbers = [0, 2];
 
   function setArrayVal(uint index, uint value) public {
-      numbers[index] = value;
+      numbers[index] = value; //fixed you ask for 2 args. same for mappings as it already contains all the possible addresses 
   }
   
   function numbersLength() view public returns(uint) {
@@ -21,7 +21,7 @@ contract DynamicArrays{ //cost more gas than fixedarrays
     uint[] public numbers;
     
     function setNextItem(uint item) public {
-        numbers.push(item);
+        numbers.push(item); //dynamic you prob push it
     }
 
     function getItem(uint i) public view returns(uint) {

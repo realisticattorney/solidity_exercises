@@ -1,5 +1,5 @@
 contract Auction {
-    //cant iterate over mappings (are objects) however, instead of key names, its values are indexed
+    //cant iterate over mappings (are objects and mapping(address) contains all keys with a 0 or '' etc value for each) however, instead of key names, its values are indexed
     //this contract is to bid, highest bid's bidder gets the whatever 
     mapping(address => uint ) public bids;//this has a default 0 for every valid address there is
     
